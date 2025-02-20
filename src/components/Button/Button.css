@@ -6,7 +6,7 @@
     border-radius: 20px;
     padding: var(--spacing-small) var(--spacing-medium);
     font-family: var(--font-family);
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-large);
     cursor: pointer;
   }
   

@@ -3,9 +3,8 @@
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    padding: var(--spacing-large);
+    /* padding: var(--spacing-large); */
     text-align: center;
-    height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -14,13 +13,13 @@
   
   .home h1 {
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-medium);
   }
   
   .home p {
     font-size: 1.25rem;
-    color: var(--secondary-color);
+    color: var(--text-color);
   }
 
   .hero-section {
@@ -28,13 +27,11 @@
     justify-content: space-evenly;
     align-items: center;
     gap: var(--spacing-large);
-    margin-top: 100px;
+    height: 100vh;
   }
 
   .hero-image img {
     width: 600px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
   }
 
   .hero-content {
@@ -44,4 +41,150 @@
   .hero-content h1 {
     color: var(--text-color);
     font-weight: 300;
+  }
+
+  /* Services */
+  .services {
+    height: 90vh;
+    background: #F5FAFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services h1 {
+    color: var(--background-color);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .services h3 {
+    color: var(--background-color);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .services h4 {
+    color: var(--background-color);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .services p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+  }
+
+  .services-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-large);
+    width: 80%;
+    margin-inline: auto;
+  }  
+
+  .services .service {
+    width: 25%;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    background: var(--text-color);
+    box-shadow: var(--box-shadow);
+  }
+
+  .services .service:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+  /* Stats */
+  .stats-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-small);
+    width: 100%;
+  }
+  
+  .stats-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+  }
+
+  .stat p {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-block: 20px;
+  }
+
+  .stat h4 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 300;
+    margin: 0 0 15px;
+  }
+
+  .stat h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Company */
+
+  .company {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    height: 70vh;
+    background: var(--text-color);
+    color: var(--secondary-color);
+  }
+  .our-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    height: 70vh;
+    background: var(--text-color);
+    color: var(--background-color);
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  .company-section {
+    width: 50%;
+  }
+
+  .company-section h3, .company-section h1 {
+    text-align: start;
+    color: var(--background-color);
+  }
+
+  .company-section h1 {
+    font-weight: 500;
+  }
+
+  .company-section p {
+    color: var(--secondary-color);
+    line-height: 1.7rem;
+    font-size: 1.2rem;
+  }
+
+  .company-image {
+    width: 50%;
+  }
+
+  .company-image img {
+    width: 80%;
   }
