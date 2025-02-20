@@ -1,16 +1,24 @@
 /* src/styles/global.css */
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
 :root {
     /* Colors */
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --success-color: #28a745;
     --error-color: #dc3545;
-    --background-color: #f8f9fa;
-    --text-color: #333;
+    --background-color: #001d3d;
+    --text-color: #fff;
+
+    --glass-background-color: rgba(255, 255, 255, 0.134);
+    --glass-border-color: rgba(255, 255, 255, 0.422);
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   
     /* Fonts */
-    --font-family: 'Arial', sans-serif;
+    --font-family: 'Helvetica', sans-serif;
     --font-size-base: 16px;
+    --font-size-medium: 20px;
+    --font-size-large: 24px;
   
     /* Spacing */
     --spacing-small: 8px;
