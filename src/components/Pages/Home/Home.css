@@ -31,6 +31,7 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--background-color) 0%, #000B1C 100%);
+    z-index: 1;
   }
 
   /* Tech-inspired background elements */
@@ -102,7 +103,7 @@
   }
 
   .hero-content {
-    width: 50%;
+    width: 40%;
     text-align: left;
   }
 
@@ -132,7 +133,7 @@
   }
 
   .hero-image img {
-    width: 600px;
+    width: 550px;
   }
 
   /* Services */
@@ -500,6 +501,7 @@
     background: #f5f7fa;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
   .products-section::before {
