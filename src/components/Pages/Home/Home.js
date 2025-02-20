@@ -13,6 +13,8 @@ function Home() {
       <ServicesSection />
       <OurCompany />
       <StatsSection />
+      <SuccessStoriesSection />
+      <ProductsSection />
     </div>
   );
 }
@@ -20,83 +22,131 @@ function Home() {
 function HeroSection() {
   return (
     <div className="hero-section">
-        {/* Hero Content - Slides in from the Left */}
-        <motion.div
-          className="hero-content"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          <h1>Empowering Businesses, Elevating Innovation.</h1>
-          <p>We build cutting-edge applications for your business.</p>
-          <button className="button">Get Started</button>
-        </motion.div>
-
-        {/* Hero Image - Slides in from the Right */}
-        <motion.div
-          className="hero-image"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }} // Delay to stagger effect
-        >
-          <img src="./assets/hero.png" alt="hero" />
-        </motion.div>
+      <div className="floating-tech-elements">
+        <div className="tech-circle"></div>
+        <div className="tech-circle"></div>
       </div>
+      
+      <motion.div
+        className="hero-content"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <h1>Empowering Businesses Through Digital Innovation</h1>
+        <p>Transform your business with cutting-edge technology solutions that drive growth and efficiency.</p>
+        <motion.button 
+          className="button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Get Started
+        </motion.button>
+      </motion.div>
+
+      <motion.div
+        className="hero-image"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
+        <img src="./assets/hero.png" alt="hero" />
+      </motion.div>
+    </div>
   );
 }
 
 
 function ServicesSection() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
+  const [ref, inView] = useInView({
     threshold: 0.1,
+    triggerOnce: true
   });
 
-  useEffect(() => {
-    if (inView) {
-      document.querySelectorAll(".service").forEach((service, index) => {
-        service.style.transitionDelay = `${index * 0.2}s`;
-        service.classList.add("fade-in");
-      });
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
     }
-  }, [inView]);
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 20 
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  const services = [
+    {
+      img: "./assets/ux.png",
+      title: "Visual Design",
+      alt: "Visual Design",
+      description: "Transform your ideas into stunning visual experiences. Our design team creates intuitive, user-friendly interfaces that captivate and engage your audience."
+    },
+    {
+      img: "./assets/app-development.png",
+      title: "Development",
+      alt: "Development",
+      description: "Custom software solutions built with cutting-edge technologies. From web applications to mobile apps, we bring your vision to life."
+    },
+    {
+      img: "./assets/laptop.png",
+      title: "QA Testing",
+      alt: "Testing",
+      description: "Ensure flawless performance with our comprehensive testing services. We identify and eliminate issues before they reach your users."
+    },
+    {
+      img: "./assets/it-manager.png",
+      title: "IT Management",
+      alt: "IT",
+      description: "Streamline your IT operations with our expert management services. We handle the technology so you can focus on your business."
+    },
+    {
+      img: "./assets/cyber-security.png",
+      title: "Cyber Security",
+      alt: "security",
+      description: "Protect your digital assets with our advanced security solutions. We implement robust measures to keep your data safe and secure."
+    },
+    {
+      img: "./assets/telecommunication.png",
+      title: "Wireless Connectivity",
+      alt: "wireless",
+      description: "Stay connected with reliable wireless solutions. We design and implement networks that keep your business running smoothly."
+    }
+  ];
 
   return (
     <div className="services" ref={ref}>
       <h3>Services</h3>
       <h1>Our services include:</h1>
-      <div className="services-list">
-        <div className="service">
-          <img src="./assets/ux.png" alt="Visual Design" />
-          <h4>Visual Design</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-        <div className="service">
-          <img src="./assets/app-development.png" alt="Development" />
-          <h4>Development</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-        <div className="service">
-          <img src="./assets/laptop.png" alt="Testing" />
-          <h4>QA Testing</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-        <div className="service">
-          <img src="./assets/it-manager.png" alt="IT" />
-          <h4>IT Management</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-        <div className="service">
-          <img src="./assets/cyber-security.png" alt="security" />
-          <h4>Cyber Security</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-        <div className="service">
-          <img src="./assets/telecommunication.png" alt="wireless" />
-          <h4>Wireless Connectivity</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-        </div>
-      </div>
+      <motion.div 
+        className="services-list"
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            className="service"
+            variants={itemVariants}
+          >
+            <img src={service.img} alt={service.alt} />
+            <h4>{service.title}</h4>
+            <p>{service.description}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 }
@@ -158,26 +208,245 @@ function StatsSection() {
 }
  
 function OurCompany() {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
   return (
-    <div className="company">
+    <div className="company" ref={ref}>
       <div className="our-company">
-        <div className="company-section">
-            <h3>Our Company</h3>
-            <h1>Innovative It Helping Service All Over the World</h1>
-            <p>
-            It is a long established fact that a reader will be distracted by the rea dable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters, as opposed to using Content here,content here normal distribution looking at its.
-            </p>
-            <p>
+        <motion.div
+          className="company-section"
+          initial={{ x: -100, opacity: 0 }}
+          animate={inView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <h3>Our Company</h3>
+          <h1>Innovative tech Helping Service All Over the World</h1>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters, as opposed to using Content here,content here normal distribution looking at its.
+          </p>
+          <p>
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form variations passages.
-            </p>
-            <button className="button">Learn More</button>
+          </p>
+          <button className="button">Learn More</button>
+        </motion.div>
+
+        <motion.div
+          className="company-image-container"
+          initial={{ x: 100, opacity: 0 }}
+          animate={inView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        >
+          <div className="image-background"></div>
+          <div className="image-frame">
+            <img src="./assets/company.jpg" alt="company" />
+          </div>
+          <div className="floating-shape"></div>
+          <div className="floating-dots"></div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+function SuccessStoriesSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const stories = [
+    {
+      title: "Digital Transformation",
+      client: "TechCorp Industries",
+      description: "Revolutionized their legacy systems with cloud integration, resulting in 40% improved efficiency.",
+      image: "./assets/success1.jpg"
+    },
+    {
+      title: "E-Commerce Evolution",
+      client: "Global Retail Co",
+      description: "Developed a scalable platform handling 10,000+ concurrent users, boosting sales by 200%.",
+      image: "./assets/success2.jpg"
+    },
+    {
+      title: "Security Enhancement",
+      client: "FinTech Solutions",
+      description: "Implemented cutting-edge security protocols, achieving zero breaches in 24 months.",
+      image: "./assets/success3.jpg"
+    }
+  ];
+
+  return (
+    <div className="success-stories">
+      <div className="success-overlay">
+        <h3>Success Stories</h3>
+        <h1>Transforming Businesses Worldwide</h1>
+        
+        <div className="slider-container">
+          <motion.div 
+            className="stories-slider"
+            animate={{ 
+              translateX: `-${currentSlide * 100}%` 
+            }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 300, 
+              damping: 30 
+            }}
+          >
+            {stories.map((story, index) => (
+              <div className="story-card" key={index}>
+                <h2>{story.title}</h2>
+                <h4>{story.client}</h4>
+                <p>{story.description}</p>
+              </div>
+            ))}
+          </motion.div>
         </div>
-        <div className="company-image">
-          <img src="./assets/company.jpg" alt="company" />
+
+        <div className="slider-controls">
+          {stories.map((_, index) => (
+            <button
+              key={index}
+              className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
         </div>
       </div>
     </div>
   );
 }
+
+function ProductsSection() {
+  const [activeProduct, setActiveProduct] = useState(0);
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  const products = [
+    {
+      name: "PettyCash System",
+      tagline: "Streamline Your Financial Operations",
+      description: "An intelligent petty cash management solution that automates reconciliation, tracking, and reporting. Perfect for businesses looking to eliminate manual cash handling processes.",
+      features: ["Automated Reconciliation", "Digital Receipts", "Real-time Tracking", "Audit Trails"],
+      icon: "💰",
+      color: "#4CAF50"
+    },
+    {
+      name: "Garbage Collection App",
+      tagline: "Smart Waste Management Solutions",
+      description: "A comprehensive waste management platform connecting collectors with clients. Features real-time tracking, scheduling, and payment integration for efficient urban waste management.",
+      features: ["Route Optimization", "Payment Integration", "Collection Scheduling", "Performance Analytics"],
+      icon: "♻️",
+      color: "#2196F3"
+    },
+    {
+      name: "AfyChain",
+      tagline: "Revolutionary NCD Care System",
+      description: "An innovative healthcare platform focused on Non-Communicable Disease management. Connects patients, healthcare providers, and specialists in a seamless care ecosystem.",
+      features: ["Patient Monitoring", "Treatment Tracking", "Healthcare Analytics", "Telemedicine Integration"],
+      icon: "⚕️",
+      color: "#E91E63"
+    },
+    {
+      name: "Kintara",
+      tagline: "Empowering Voices Against Violence",
+      description: "A secure and anonymous platform for reporting gender-based violence. Provides support resources, connects victims with assistance, and helps track incident patterns.",
+      features: ["Anonymous Reporting", "Resource Connection", "Emergency Assistance", "Data Analytics"],
+      icon: "🛡️",
+      color: "#9C27B0"
+    },
+    {
+      name: "Biashara Track",
+      tagline: "Complete Retail Management Solution",
+      description: "An all-in-one MSME retail management system. Integrates inventory, sales, and financial management for seamless business operations.",
+      features: ["Inventory Management", "POS Integration", "Financial Reports", "Stock Analytics"],
+      icon: "🏪",
+      color: "#FF9800"
+    }
+  ];
+
+  return (
+    <div className="products-section" ref={ref}>
+      <motion.div 
+        className="products-header"
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Our Products</h3>
+        <h1>Innovative Solutions for Modern Challenges</h1>
+      </motion.div>
+
+      <div className="products-showcase">
+        <motion.div 
+          className="products-nav"
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          {products.map((product, index) => (
+            <motion.div
+              key={index}
+              className={`product-nav-item ${activeProduct === index ? 'active' : ''}`}
+              onClick={() => setActiveProduct(index)}
+              whileHover={{ scale: 1.05 }}
+              style={{
+                '--product-color': product.color
+              }}
+            >
+              <span className="product-icon">{product.icon}</span>
+              {product.name}
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          className="product-details"
+          initial={{ opacity: 0, x: 50 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <motion.div
+            key={activeProduct}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="product-content"
+            style={{
+              '--product-color': products[activeProduct].color
+            }}
+          >
+            <h2>{products[activeProduct].name}</h2>
+            <h4>{products[activeProduct].tagline}</h4>
+            <p>{products[activeProduct].description}</p>
+            <div className="product-features">
+              {products[activeProduct].features.map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  className="feature-tag"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {feature}
+                </motion.div>
+              ))}
+            </div>
+            <motion.button 
+              className="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 export default Home;
 
