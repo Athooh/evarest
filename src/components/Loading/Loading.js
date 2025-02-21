@@ -19,7 +19,7 @@ function useLoadingTimer(duration = 2000) {
 function Loading() {
   return (
     <div className="loading">
-      <div className="spinner"></div>
+      <div className="wave-loader"></div>
     </div>
   );
 }
