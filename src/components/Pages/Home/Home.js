@@ -4,6 +4,7 @@ import "./Home.css";
 import "../../Button/Button.css";
 import "../../Footer/Footer.css";
 import { useInView } from "react-intersection-observer";
+import ChatBot from '../../ChatBot/ChatBot';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <ProductsSection />
       <WorkflowSection />
       <ContactCTASection />
+      <ChatBot />
     </div>
   );
 }
