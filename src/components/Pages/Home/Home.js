@@ -14,6 +14,8 @@ function Home() {
       <StatsSection />
       <SuccessStoriesSection />
       <ProductsSection />
+      <WorkflowSection />
+      <ContactCTASection />
     </div>
   );
 }
@@ -441,6 +443,121 @@ function ProductsSection() {
           </motion.div>
         </motion.div>
       </div>
+    </div>
+  );
+}
+
+function WorkflowSection() {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  const steps = [
+    {
+      title: "Discovery",
+      description: "Initial consultation to understand your business needs and objectives",
+      icon: "🎯",
+    },
+    {
+      title: "Analysis",
+      description: "Deep dive into requirements and technical feasibility assessment",
+      icon: "📊",
+    },
+    {
+      title: "Design",
+      description: "Creating detailed solutions architecture and project roadmap",
+      icon: "✏️",
+    },
+    {
+      title: "Development",
+      description: "Agile implementation with continuous feedback integration",
+      icon: "💻",
+    },
+    {
+      title: "Deployment",
+      description: "Seamless delivery with comprehensive testing and support",
+      icon: "🚀",
+    }
+  ];
+
+  return (
+    <div className="workflow-section" ref={ref}>
+      <motion.div 
+        className="section-header"
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3>Our Process</h3>
+        <h1>How We Deliver Excellence</h1>
+      </motion.div>
+
+      <div className="workflow-container">
+        {steps.map((step, index) => (
+          <motion.div 
+            key={index}
+            className="workflow-step"
+            initial={{ opacity: 0, x: -30 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <div className="step-content">
+              <span className="step-number">{(index + 1).toString().padStart(2, '0')}</span>
+              <div className="step-icon">{step.icon}</div>
+              <h4>{step.title}</h4>
+              <p>{step.description}</p>
+            </div>
+            {index < steps.length - 1 && <div className="flow-arrow">→</div>}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ContactCTASection() {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  return (
+    <div className="cta-section" ref={ref}>
+      <div className="cta-background">
+        <div className="gradient-overlay"></div>
+        <div className="pattern-overlay"></div>
+      </div>
+      
+      <motion.div 
+        className="cta-content"
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how our innovative solutions can drive your success</p>
+        
+        <div className="cta-buttons">
+          <motion.button 
+            className="button primary-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Schedule a Meeting
+          </motion.button>
+          
+          <motion.div 
+            className="quick-contact"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <span>or</span>
+            <a href="tel:+1234567890">Call us: +123 456 7890</a>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }
