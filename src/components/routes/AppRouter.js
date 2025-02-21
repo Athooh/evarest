@@ -7,8 +7,15 @@ import Services from '../Pages/Services/Services';
 import Contact from '../Pages/Contact/Contact';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import Loading, { useLoadingTimer } from '../Loading/Loading';
 
 function AppRouter() {
+  const loading = useLoadingTimer(2000);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <Router>
       <Navbar />
