@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ChatBot.css';
 
@@ -97,7 +97,7 @@ function ChatBot() {
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                onKeyDownCapture={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Type your message..."
               />
               <button onClick={handleSend}>Send</button>
