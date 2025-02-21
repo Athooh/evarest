@@ -252,6 +252,10 @@
     gap: var(--spacing-small);
     width: 100%;
   }
+
+  .stats-section h3 {
+    font-size: 1.5rem;
+  }
   
   .stats-list {
     display: flex;
@@ -287,7 +291,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-medium);
-    height: 70vh;
+    height: 80vh;
     background: var(--text-color);
     color: var(--secondary-color);
   }
@@ -296,7 +300,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-medium);
-    height: 70vh;
+    height: 80vh;
     background: var(--text-color);
     color: var(--background-color);
     width: 80%;
