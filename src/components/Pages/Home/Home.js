@@ -1,27 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import "../../Button/Button.css";
 import "../../Footer/Footer.css";
-import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
-import Loading from "../../Loading/Loading";
 
 function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulate a 2-second loading time
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
   return (
     <div className="home">
       <HeroSection />
@@ -33,7 +17,6 @@ function Home() {
     </div>
   );
 }
-
 
 function HeroSection() {
   return (
@@ -71,7 +54,6 @@ function HeroSection() {
     </div>
   );
 }
-
 
 function ServicesSection() {
   const [ref, inView] = useInView({
@@ -166,7 +148,6 @@ function ServicesSection() {
     </div>
   );
 }
-
 
 function StatsSection() {
   const { ref, inView } = useInView({
