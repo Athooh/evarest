@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2024 Evarest. All rights reserved.</p>
+      <p>&copy; 2025 Evarest. All rights reserved.</p>
     </footer>
   );
 }
