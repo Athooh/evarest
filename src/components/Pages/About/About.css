@@ -1,9 +1,11 @@
+@import url('../../Button/Button.css');
+
 .About-hero-section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: var(--spacing-large);
-    height: 30vh;
+    height: 40vh;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--background-color) 0%, #000B1C 100%);
@@ -86,14 +88,23 @@
 
   /* Mission Section */
 .mission-section {
-  background: #f5f7fa;
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-large);
+    padding: 4rem 0;
     color: var(--text-color);
-    height: 40vh;
+    height: 50vh;
+}
+
+.mission-section h1 {
+    background: linear-gradient(90deg, var(--background-color), var(--primary-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+    margin-top: 0;
 }
 
 .mission-section h3, .mission-section p {
@@ -102,12 +113,16 @@
     color: var(--background-color);
 }
 
+.mission-section h3 {
+    font-size: var(--font-size-medium);
+}
+
 .mission-section p {
     max-width: 800px;
     text-align: center;
     line-height: 1.6;
     color: var(--secondary-color);
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-small);
 }
 
 /* Team Section */
@@ -148,13 +163,13 @@
     pointer-events: none;
 }
 
-.team-heading h2 {
-    font-size: 2rem;
+.team-heading h1 {
+    background: linear-gradient(90deg, var(--background-color), var(--primary-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-medium);
-    color: var(--background-color);
-    position: relative;
-    z-index: 2;
-    text-align: center;
+    margin-top: 0;
 }
 
 .team-heading p {
@@ -230,27 +245,34 @@
 
 /* About Evarest */
 .about-evarest {
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    height: 40vh;
+    padding: 2.5rem 0;
+    background: #f5f7fa;
     text-align: center;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .about-evarest h3 {
-    font-size: 2rem;
+    font-size: var(--font-size-medium);
     margin-bottom: var(--spacing-medium);
     color: var(--background-color);
 }
 
+.about-evarest h1 {
+    background: linear-gradient(90deg, var(--background-color), var(--primary-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+    margin-top: 0;
+}
+
 .about-evarest p {
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-small);
     color: #666;
-    line-height: 1.2;
+    line-height: 1.6;
     max-width: 800px;
     text-align: center;
 }
@@ -276,3 +298,243 @@
 .member:hover .linkedin-link {
   transform: translateY(-2px);
 }
+
+/* Vision Section */
+.vision-section {
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 0;
+    color: #666;
+    height: 60vh;
+    margin: 0 auto;
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+}
+
+.vision-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.vision-container h1 {
+    background: linear-gradient(90deg, var(--background-color), var(--primary-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+    margin-top: 0;
+}
+
+.vision-container h3 {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-medium);
+    color: var(--background-color);
+}
+
+.vision-box, .vision-list {
+    width: 45%;
+}
+
+.vision-list {
+    position: relative;
+    width: 45%;
+    padding: 2rem;
+}
+
+.vision-list .image-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    opacity: 0.1;
+    border-radius: 30px;
+    transform: rotate(-3deg);
+}
+
+.vision-list .image-frame {
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.vision-list .floating-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.vision-list .floating-dots {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-image: radial-gradient(var(--primary-color) 2px, transparent 2px);
+    background-size: 10px 10px;
+    z-index: 1;
+}
+
+.vision-content {
+    position: relative;
+    z-index: 2;
+}
+
+.vision-list li {
+    list-style: circle;
+    list-style-type: circle;
+    /* margin-bottom: rem; */
+}
+
+.vision-list li::marker {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.vision-button {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Update existing vision-list hover effect */
+.vision-list:hover .image-frame {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.vision-button button {
+    composes: button;  /* This will inherit all .button styles */
+}
+
+.book-pages {
+  perspective: 1000px;
+  width: 80%;
+  margin: 1.5rem 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sticky-note {
+  background: #fefefe;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 
+    0 5px 15px rgba(0,0,0,0.1),
+    0 0 1px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  transform-origin: center center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 100px;
+  height: 30px;
+  background: rgba(255, 165, 0, 0.4); /* Orange with transparency */
+  border-radius: 5px;
+  opacity: 0.8;
+  box-shadow: 
+    0 2px 5px rgba(0,0,0,0.05),
+    inset 0 -1px 3px rgba(255, 140, 0, 0.2); /* Darker orange for shadow */
+}
+
+.tape::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      rgba(255, 140, 0, 0.1) 5px, /* Darker orange for stripes */
+      rgba(255, 140, 0, 0.1) 10px
+    );
+}
+
+.page-content {
+  position: relative;
+  text-align: left;
+}
+
+.page-content p {
+  margin: 0;
+  line-height: 1.8;
+  color: #666;
+  font-size: var(--font-size-small);
+}
+
+.page-number {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .book-pages {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-pages {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .sticky-note {
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .page-content p {
+    font-size: 1rem;
+  }
+  
+  .tape {
+    width: 80px;
+    height: 25px;
+  }
+} 
