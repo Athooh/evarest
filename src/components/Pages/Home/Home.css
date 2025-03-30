@@ -13,7 +13,7 @@
   
   .home h1 {
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-medium);
   }
   
@@ -183,7 +183,7 @@
     background: linear-gradient(90deg, var(--background-color), var(--primary-color));
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-medium);
     margin-top: 0;
   }
@@ -324,7 +324,7 @@
 
   .company-section h1 {
     text-align: start;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-medium);
     background: linear-gradient(90deg, var(--background-color), var(--primary-color));
     background-clip: text;
@@ -428,7 +428,7 @@
   }
 
   .success-overlay h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     background: linear-gradient(90deg, #fff, var(--primary-color));
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -537,7 +537,7 @@
   }
 
   .products-header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     background: linear-gradient(90deg, var(--background-color), var(--primary-color));
     background-clip: text;
     -webkit-background-clip: text;
@@ -822,7 +822,7 @@
   }
 
   .cta-content h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
     background: linear-gradient(90deg, #ffffff, var(--primary-color));
     -webkit-background-clip: text;
