@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
+import ChatBot from '../../ChatBot/ChatBot';
 
 function About() {
   return (
@@ -11,6 +12,7 @@ function About() {
       <MissionSection />
       <VisionSection />
       <TeamSection />
+      <ChatBot />
     </div>
   );
 }
