@@ -419,10 +419,6 @@
     transition: transform 0.3s ease;
 }
 
-.vision-button button {
-    composes: button;  /* This will inherit all .button styles */
-}
-
 .book-pages {
   perspective: 1000px;
   width: 80%;
