@@ -1,5 +1,5 @@
 .services-page {
-  /* background: #f5f7fa; */
+  background: #f5f7fa;
   margin: 0;
 }
 
@@ -36,11 +36,12 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   max-width: 1400px;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
+  padding-bottom: 2rem;
 }
 
 .service-card {
-  background: #f5f7fa;
+  background: #fff;
   padding: 2rem;
   border-radius: 15px;
   box-shadow:  4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.9);
